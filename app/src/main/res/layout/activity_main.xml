@@ -8,27 +8,30 @@
 
     <FrameLayout
         android:id="@+id/top_c"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="70dp"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:background="@color/teal_700"/>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginHorizontal="50dp"
-        android:layout_marginVertical="120dp"
+        android:layout_marginVertical="50dp"
         android:orientation="vertical"
         android:background="@color/purple_200"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/top_c"
-        app:layout_constraintBottom_toTopOf="@id/bottom_c">
+        app:layout_constraintBottom_toTopOf="@id/bottom_c"/>
 
-    </LinearLayout>
     <FrameLayout
         android:id="@+id/bottom_c"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         android:layout_height="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         android:background="@color/teal_200"/>
