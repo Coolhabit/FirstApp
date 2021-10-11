@@ -2,13 +2,13 @@
     <!-- Base application theme. -->
     <style name="Theme.FirstApp" parent="Theme.MaterialComponents">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#5AFF00</item>
+        <item name="colorPrimary">#FF0A0A</item>
         <item name="colorPrimaryVariant">#FFFFFF</item>
-        <item name="colorOnPrimary">#FF0000</item>
+        <item name="colorOnPrimary">#FBFBFB</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">#FFFFFF</item>
         <item name="colorSecondaryVariant">#FFFFFF</item>
-        <item name="colorOnSecondary">#63C600</item>
+        <item name="colorOnSecondary">#C60000</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
