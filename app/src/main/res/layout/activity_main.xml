@@ -91,11 +91,11 @@
         app:layout_constraintTop_toBottomOf="@+id/top_c" />
 
     <GridLayout
-        android:layoutAnimation="@anim/layout_anim"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:columnCount="2"
+        android:layoutAnimation="@anim/layout_anim"
         android:orientation="horizontal"
         android:useDefaultMargins="true"
         app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
@@ -104,11 +104,11 @@
         app:layout_constraintTop_toBottomOf="@+id/disclaimer">
 
         <androidx.cardview.widget.CardView
-            android:clickable="true"
-            android:stateListAnimator="@animator/press_button_animation"
             android:id="@+id/post_ctr_1"
             android:layout_width="150dp"
             android:layout_height="200dp"
+            android:clickable="true"
+            android:stateListAnimator="@animator/press_button_animation"
             app:cardCornerRadius="15dp">
 
             <ImageView
@@ -119,11 +119,11 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:clickable="true"
-            android:stateListAnimator="@animator/press_button_animation"
             android:id="@+id/post_ctr_2"
             android:layout_width="150dp"
             android:layout_height="200dp"
+            android:clickable="true"
+            android:stateListAnimator="@animator/press_button_animation"
             app:cardCornerRadius="15dp">
 
             <ImageView
@@ -134,11 +134,11 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:clickable="true"
-            android:stateListAnimator="@animator/press_button_animation"
             android:id="@+id/post_ctr_3"
             android:layout_width="150dp"
             android:layout_height="200dp"
+            android:clickable="true"
+            android:stateListAnimator="@animator/press_button_animation"
             app:cardCornerRadius="15dp">
 
             <ImageView
@@ -149,11 +149,11 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:clickable="true"
-            android:stateListAnimator="@animator/press_button_animation"
             android:id="@+id/post_ctr_4"
             android:layout_width="150dp"
             android:layout_height="200dp"
+            android:clickable="true"
+            android:stateListAnimator="@animator/press_button_animation"
             app:cardCornerRadius="15dp">
 
             <ImageView
