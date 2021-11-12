@@ -11,8 +11,11 @@
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/drawable/ic_baseline_movie_24.xml" value="0.14635416666666667" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.14635416666666667" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.14635416666666667" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/drawable/ic_baseline_share_24.xml" value="0.2351851851851852" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2703125" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/layout/activity_details.xml" value="0.17119565217391305" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/layout/film_item.xml" value="0.17119565217391305" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/menu/nav.xml" value="0.25416666666666665" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/menu/toolbar.xml" value="0.13020833333333334" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/menu/top_app_bar.xml" value="0.4" />
