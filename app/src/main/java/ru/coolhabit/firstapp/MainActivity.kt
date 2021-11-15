@@ -6,24 +6,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
 import ru.coolhabit.firstapp.databinding.ActivityMainBinding
 import ru.coolhabit.firstapp.databinding.FilmItemBinding
 
 
-
-
 class MainActivity : AppCompatActivity() {
-    private lateinit var filmsAdapter: FilmListRecyclerAdapter
 
-    val filmsDataBase = listOf(
-        Film("Dune", R.drawable.poster1, "Feature adaptation of Frank Herbert's science fiction novel, about the son of a noble family entrusted with the protection of the most valuable asset and most vital element in the galaxy."),
-        Film("Interstellar", R.drawable.poster4, "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival."),
-        Film("Pulp Fiction", R.drawable.pulp, "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption."),
-        Film("Jurassic Park", R.drawable.jurassic, "A pragmatic paleontologist touring an almost complete theme park on an island in Central America is tasked with protecting a couple of kids after a power failure causes the park's cloned dinosaurs to run loose."),
-        Film("Thor: Ragnarok", R.drawable.poster2, "Imprisoned on the planet Sakaar, Thor must race against time to return to Asgard and stop Ragnarök, the destruction of his world, at the hands of the powerful and ruthless villain Hela.")
-    )
 
     private var binding: ActivityMainBinding? = null
 
@@ -34,38 +25,32 @@ class MainActivity : AppCompatActivity() {
 
         initNavigation()
 
-        //находим наш RV
-        binding?.mainRecycler.apply {
-            //Инициализируем наш адаптер в конструктор передаем анонимно инициализированный интерфейс,
-            //оставим его пока пустым, он нам понадобится во второй части задания
-            filmsAdapter = FilmListRecyclerAdapter(object : FilmListRecyclerAdapter.OnItemClickListener{
-                override fun click(film: Film) {
-                    //Создаем бандл и кладем туда объект с данными фильма
-                    val bundle = Bundle()
-                    //Первым параметром указывается ключ, по которому потом будем искать, вторым сам
-                    //передаваемый объект
-                    bundle.putParcelable("film", film)
-                    //Запускаем наше активити
-                    val intent = Intent(this@MainActivity, DetailsActivity::class.java)
-                    //Прикрепляем бандл к интенту
-                    intent.putExtras(bundle)
-                    //Запускаем активити через интент
-                    startActivity(intent)
-                }
-            })
-            //Присваиваем адаптер
-            this!!.adapter = filmsAdapter
-            //Присвои layoutmanager
-            this!!.layoutManager = LinearLayoutManager(this@MainActivity)
-            //Применяем декоратор для отступов
-            val decorator = TopSpacingItemDecoration(8)
-            this!!.addItemDecoration(decorator)
-        }
-//Кладем нашу БД в RV
-        filmsAdapter.addItems(filmsDataBase)
+        //Запускаем фрагмент при старте
+        supportFragmentManager
+            .beginTransaction()
+            .add(R.id.fragment_placeholder, HomeFragment())
+            .addToBackStack(null)
+            .commit()
 
     }
 
+    fun launchDetailsFragment(film: Film) {
+        //Создаем "посылку"
+        val bundle = Bundle()
+        //Кладем наш фильм в "посылку"
+        bundle.putParcelable("film", film)
+        //Кладем фрагмент с деталями в перменную
+        val fragment = DetailsFragment()
+        //Прикрепляем нашу "посылку" к фрагменту
+        fragment.arguments = bundle
+
+        //Запускаем фрагмент
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragment_placeholder, fragment)
+            .addToBackStack(null)
+            .commit()
+    }
 
 
     private fun initNavigation() {
@@ -97,5 +82,23 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+
+        AlertDialog.Builder(this)
+            .setTitle("Вы хотите выйти?")
+            .setIcon(R.drawable.ic_baseline_menu_24)
+            .setPositiveButton("Да") { _, _ ->
+                finish()
+            }
+            .setNegativeButton("Нет") { _, _ ->
+
+            }
+            .setNeutralButton("Не знаю") { _, _ ->
+                Toast.makeText(this, "Решайся", Toast.LENGTH_SHORT).show()
+            }
+            .show()
     }
 }
