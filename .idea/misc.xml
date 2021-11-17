@@ -7,6 +7,7 @@
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/drawable/corner_background.xml" value="0.2703125" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/drawable/ic_baseline_exit_to_app_24.xml" value="0.14635416666666667" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.14635416666666667" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.22962962962962963" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.14635416666666667" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/drawable/ic_baseline_movie_24.xml" value="0.14635416666666667" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.14635416666666667" />
@@ -16,6 +17,8 @@
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/layout/activity_details.xml" value="0.17119565217391305" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/layout/film_item.xml" value="0.17119565217391305" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/layout/fragment_details.xml" value="0.15760869565217392" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/layout/fragment_favorites.xml" value="0.15760869565217392" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/layout/fragment_home.xml" value="0.15760869565217392" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/menu/nav.xml" value="0.25416666666666665" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/menu/toolbar.xml" value="0.13020833333333334" />
