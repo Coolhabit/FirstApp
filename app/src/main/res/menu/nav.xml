@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/favorites"
+        android:icon="@drawable/ic_baseline_favorite_24"
+        android:title="@string/btn_fav"
+        app:showAsAction="withText"/>
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/ic_baseline_search_24"
+        android:title="@string/btn_srch"
+        app:showAsAction="withText"/>
+    <item
+        android:id="@+id/movies"
+        android:icon="@drawable/ic_baseline_movie_24"
+        android:title="@string/btn_movie"
+        app:showAsAction="withText"/>
+</menu>
