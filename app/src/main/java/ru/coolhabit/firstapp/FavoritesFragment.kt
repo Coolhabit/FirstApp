@@ -12,7 +12,8 @@ import ru.coolhabit.firstapp.databinding.FragmentFavoritesBinding
 class FavoritesFragment : Fragment() {
     private lateinit var filmsAdapter: FilmListRecyclerAdapter
     private var favBinding: FragmentFavoritesBinding? = null
-    private val binding get() = favBinding!!
+    private val binding
+        get() = favBinding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,11 +36,12 @@ class FavoritesFragment : Fragment() {
         val favoritesList: List<Film> = emptyList()
 
         favBinding?.favoritesRecycler?.apply {
-            filmsAdapter = FilmListRecyclerAdapter(object : FilmListRecyclerAdapter.OnItemClickListener {
-                override fun click(film: Film) {
-                    (requireActivity() as MainActivity).launchDetailsFragment(film)
-                }
-            })
+            filmsAdapter =
+                FilmListRecyclerAdapter(object : FilmListRecyclerAdapter.OnItemClickListener {
+                    override fun click(film: Film) {
+                        (requireActivity() as MainActivity).launchDetailsFragment(film)
+                    }
+                })
             //Присваиваем адаптер
             adapter = filmsAdapter
             //Присвои layoutmanager
