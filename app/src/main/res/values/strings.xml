@@ -1,12 +1,9 @@
 <resources>
     <string name="app_name">FirstApp</string>
-    <string name="disclaimer">Постеры взяты из https://www.movieposters.com/</string>
     <string name="btn_movie">Фильмы</string>
     <string name="btn_sett">Настройки</string>
     <string name="btn_fav">Избранное</string>
     <string name="btn_srch">Поиск</string>
-    <string name="btn_exit">Выход</string>
     <string name="page_name">MovieSearch</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
