@@ -54,9 +54,11 @@ class HomeFragment : Fragment() {
         val view = binding.root
         return view
     }
-
+    
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        AnimationHelper.performFragmentCircularRevealAnimation(binding.homeFragmentRoot, requireActivity(), 1)
 
         bindingHome?.searchView?.setOnClickListener {
             bindingHome?.searchView?.isIconified = false

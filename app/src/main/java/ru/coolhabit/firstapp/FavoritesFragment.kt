@@ -10,32 +10,28 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import ru.coolhabit.firstapp.databinding.FragmentFavoritesBinding
 
 class FavoritesFragment : Fragment() {
+    private var binding: FragmentFavoritesBinding? = null
+    private val _binding: FragmentFavoritesBinding get() = binding!!
+
     private lateinit var filmsAdapter: FilmListRecyclerAdapter
-    private var favBinding: FragmentFavoritesBinding? = null
-    private val binding
-        get() = favBinding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        favBinding = FragmentFavoritesBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        favBinding = null
+        binding = FragmentFavoritesBinding.inflate(inflater, container, false)
+        return _binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        AnimationHelper.performFragmentCircularRevealAnimation(binding!!.favoritesFragmentRoot, requireActivity(), 1)
         //Получаем список при транзакции фрагмента
         val favoritesList: List<Film> = emptyList()
 
-        favBinding?.favoritesRecycler?.apply {
+        binding?.favoritesRecycler?.apply {
             filmsAdapter =
                 FilmListRecyclerAdapter(object : FilmListRecyclerAdapter.OnItemClickListener {
                     override fun click(film: Film) {
@@ -52,5 +48,10 @@ class FavoritesFragment : Fragment() {
         }
         //Кладем нашу БД в RV
         filmsAdapter.addItems(favoritesList)
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
     }
 }
