@@ -14,14 +14,14 @@ import ru.coolhabit.firstapp.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
 
-    private var binding: ActivityMainBinding? = null
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         installSplashScreen()
 
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding!!.root)
+        setContentView(binding.root)
 
         initNavigation()
 
@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun initNavigation() {
-        binding?.topAppBar?.setOnMenuItemClickListener {
+        binding.topAppBar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.settings -> {
                     Toast.makeText(this, R.string.btn_sett, Toast.LENGTH_SHORT).show()
@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        binding?.bottomNavigation?.setOnItemSelectedListener {
+        binding.bottomNavigation.setOnItemSelectedListener {
 
             when (it.itemId) {
                 R.id.home -> {
