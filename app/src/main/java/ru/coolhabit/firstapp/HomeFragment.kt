@@ -19,31 +19,16 @@ class HomeFragment : Fragment() {
     private lateinit var filmsAdapter: FilmListRecyclerAdapter
 
     val filmsDataBase = listOf(
-        Film(
-            "Dune",
-            R.drawable.poster1,
-            "Feature adaptation of Frank Herbert's science fiction novel, about the son of a noble family entrusted with the protection of the most valuable asset and most vital element in the galaxy."
-        , 8.1f),
-        Film(
-            "Interstellar",
-            R.drawable.poster4,
-            "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival."
-        , 9.2f),
-        Film(
-            "Pulp Fiction",
-            R.drawable.pulp,
-            "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption."
-        ,  7.8f),
-        Film(
-            "Jurassic Park",
-            R.drawable.jurassic,
-            "A pragmatic paleontologist touring an almost complete theme park on an island in Central America is tasked with protecting a couple of kids after a power failure causes the park's cloned dinosaurs to run loose."
-        , 7.5f),
-        Film(
-            "Thor: Ragnarok",
-            R.drawable.poster2,
-            "Imprisoned on the planet Sakaar, Thor must race against time to return to Asgard and stop Ragnarök, the destruction of his world, at the hands of the powerful and ruthless villain Hela."
-        , 7.7f)
+        Film("Dune", R.drawable.poster1, "Feature adaptation of Frank Herbert's science " +
+                "fiction novel, about the son of a noble family entrusted with the protection of the most valuable asset and most vital element in the galaxy.", 8.1f),
+        Film("Interstellar", R.drawable.poster4, "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival."
+            , 9.2f),
+        Film("Pulp Fiction", R.drawable.pulp, "The lives of two mob hitmen, a boxer, a gangster and his " +
+                "wife, and a pair of diner bandits intertwine in four tales of violence and redemption.",  7.8f),
+        Film("Jurassic Park", R.drawable.jurassic, "A pragmatic paleontologist touring an almost complete theme park on an island in Central America " +
+                "is tasked with protecting a couple of kids after a power failure causes the park's cloned dinosaurs to run loose.", 7.5f),
+        Film("Thor: Ragnarok", R.drawable.poster2, "Imprisoned on the planet Sakaar, Thor must race against time to return to Asgard and stop Ragnarök, the " +
+                "destruction of his world, at the hands of the powerful and ruthless villain Hela.", 7.7f)
     )
 
     override fun onCreateView(

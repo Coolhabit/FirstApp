@@ -1,4 +1,8 @@
 <resources>
+    <style name="ThemeOverlay.SearchView" parent="">
+        <item name="android:editTextColor">@color/black</item>
+        <item name="android:textColorHint">@color/black</item>
+    </style>
     <declare-styleable name="RatingDonutView">
         <attr name="progress" format="integer" />
         <attr name="stroke" format="float" />

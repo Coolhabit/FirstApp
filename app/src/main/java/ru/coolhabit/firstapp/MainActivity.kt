@@ -1,11 +1,7 @@
 package ru.coolhabit.firstapp
 
-import android.animation.ObjectAnimator
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Toast
-import androidx.core.animation.doOnEnd
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.Fragment
 import ru.coolhabit.firstapp.databinding.ActivityMainBinding
@@ -54,16 +50,6 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun initNavigation() {
-        binding.topAppBar.setOnMenuItemClickListener {
-            when (it.itemId) {
-                R.id.settings -> {
-                    Toast.makeText(this, R.string.btn_sett, Toast.LENGTH_SHORT).show()
-                    true
-                }
-                else -> false
-            }
-        }
-
         binding.bottomNavigation.setOnItemSelectedListener {
 
             when (it.itemId) {
