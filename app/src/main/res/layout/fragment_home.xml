@@ -17,16 +17,16 @@
         android:background="@drawable/background_search_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:layout_margin="@dimen/sv_margin"
         app:searchIcon="@drawable/ic_baseline_search_24"
         app:searchHintIcon="@drawable/ic_baseline_search_24"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/main_recycler"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_margin="8dp"
+        android:layout_width="@dimen/recycler_view_dimen"
+        android:layout_height="@dimen/recycler_view_dimen"
+        android:layout_margin="@dimen/rv_margin"
         tools:listitem="@layout/film_item"
         app:layout_constraintTop_toBottomOf="@+id/search_view"
         app:layout_constraintBottom_toBottomOf="parent"
