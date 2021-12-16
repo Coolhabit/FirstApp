@@ -7,6 +7,7 @@ import android.util.AttributeSet
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
 import android.view.animation.LinearInterpolator
+import kotlin.math.roundToInt
 
 class RatingDonutView @JvmOverloads constructor(
     context: Context,
@@ -171,11 +172,11 @@ class RatingDonutView @JvmOverloads constructor(
 
     private fun startAnimation() {
         animator?.cancel()
-        animator = ValueAnimator.ofFloat(0f, 1f).apply {
+        animator = ValueAnimator.ofInt(0, progress).apply {
             duration = 1500
             interpolator = AccelerateDecelerateInterpolator()
             addUpdateListener {
-                this@RatingDonutView.alpha = it.animatedValue as Float
+                this@RatingDonutView.progress = it.animatedValue as Int
                 invalidate()
             }
         }
