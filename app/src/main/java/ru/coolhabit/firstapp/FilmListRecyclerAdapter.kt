@@ -3,6 +3,7 @@ package ru.coolhabit.firstapp
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import ru.coolhabit.firstapp.databinding.FilmItemBinding
 
 //в параметр передаем слушатель, чтобы мы потом могли обрабатывать нажатия из класса Activity
 class FilmListRecyclerAdapter(private val clickListener: OnItemClickListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -14,7 +15,8 @@ class FilmListRecyclerAdapter(private val clickListener: OnItemClickListener) : 
 
     //В этом методе мы привязываем наш ViewHolder и передаем туда "надутую" верстку нашего фильма
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return FilmViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.film_item, parent, false))
+        val binding = FilmItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return FilmViewHolder(binding)
     }
 
     //В этом методе будет привязка полей из объекта Film к View из film_item.xml
@@ -28,7 +30,7 @@ class FilmListRecyclerAdapter(private val clickListener: OnItemClickListener) : 
                 //Обрабатываем нажатие на весь элемент целиком(можно сделать на отдельный элемент
                 //например, картинку) и вызываем метод нашего листенера, который мы получаем из
                 //конструктора адаптера
-                holder.filmBinding.itemContainer.setOnClickListener {
+                holder.binding.itemContainer.setOnClickListener {
                     clickListener.click(items[position])
                 }
             }

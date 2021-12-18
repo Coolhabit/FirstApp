@@ -51,7 +51,6 @@ class RatingDonutView @JvmOverloads constructor(
         }
         //Инициализируем первоначальные краски
         initPaint()
-        startAnimation()
     }
 
 
@@ -161,12 +160,13 @@ class RatingDonutView @JvmOverloads constructor(
         drawText(canvas)
     }
 
-    fun setProgress(pr: Int) {
+    fun setProgress(progress: Int) {
         //Кладем новое значение в наше поле класса
-        progress = pr
+        this.progress = progress
         //Создаем краски с новыми цветами
         initPaint()
         //вызываем перерисовку View
+        startAnimation()
         invalidate()
     }
 
@@ -176,7 +176,7 @@ class RatingDonutView @JvmOverloads constructor(
             duration = 1500
             interpolator = AccelerateDecelerateInterpolator()
             addUpdateListener {
-                this@RatingDonutView.progress = it.animatedValue as Int
+                progress = it.animatedValue as Int
                 invalidate()
             }
         }

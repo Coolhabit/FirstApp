@@ -13,6 +13,7 @@ class FavoritesFragment : Fragment() {
     private var binding: FragmentFavoritesBinding? = null
     private val _binding: FragmentFavoritesBinding get() = binding!!
 
+
     private lateinit var filmsAdapter: FilmListRecyclerAdapter
 
     override fun onCreateView(
@@ -47,7 +48,7 @@ class FavoritesFragment : Fragment() {
             addItemDecoration(decorator)
         }
         //Кладем нашу БД в RV
-        filmsAdapter.addItems(favoritesList)
+        filmsAdapter.addItems(FilmDB.filmDataBase)
     }
 
     override fun onDestroyView() {

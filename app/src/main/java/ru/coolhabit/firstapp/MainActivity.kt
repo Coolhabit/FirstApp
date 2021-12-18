@@ -9,6 +9,10 @@ import ru.coolhabit.firstapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    companion object {
+        const val FILM = "film"
+    }
+
 
     private lateinit var binding: ActivityMainBinding
 
@@ -34,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         //Создаем "посылку"
         val bundle = Bundle()
         //Кладем наш фильм в "посылку"
-        bundle.putParcelable("film", film)
+        bundle.putParcelable(FILM, film)
         //Кладем фрагмент с деталями в перменную
         val fragment = DetailsFragment()
         //Прикрепляем нашу "посылку" к фрагменту
@@ -94,4 +98,6 @@ class MainActivity : AppCompatActivity() {
             .addToBackStack(null)
             .commit()
     }
+
+
 }

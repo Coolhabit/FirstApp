@@ -8,17 +8,15 @@ import ru.coolhabit.firstapp.databinding.FilmItemBinding
 
 
 //В конструктор класс передается layout, который мы создали(film_item.xml)
-class FilmViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class FilmViewHolder(val binding: FilmItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
-
-    val filmBinding = FilmItemBinding.bind(itemView)
 
     //Привязываем view из layout к переменным
-    private val title = filmBinding.title
-    private val poster = filmBinding.poster
-    private val description = filmBinding.description
+    private val title = binding.title
+    private val poster = binding.poster
+    private val description = binding.description
     //Вот здесь мы находим в верстке наш прогресс бар для рейтинга
-    private val ratingDonut = filmBinding.ratingDonut
+    private val ratingDonut = binding.ratingDonut
 
 
     //В этом методе кладем данные из Film в наши View
@@ -26,7 +24,7 @@ class FilmViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
 
         //Устанавливаем заголовок
-        filmBinding.title.text = film.title
+        binding.title.text = film.title
         //Устанавливаем постер
         //Указываем контейнер, в котором будет "жить" наша картинка
         Glide.with(itemView)
@@ -35,10 +33,10 @@ class FilmViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             //Центруем изображение
             .centerCrop()
             //Указываем ImageView, куда будем загружать изображение
-            .into(filmBinding.poster)
+            .into(binding.poster)
         //Устанавливаем описание
-        filmBinding.description.text = film.description
+        binding.description.text = film.description
         //Устанавливаем рейтинг
-        filmBinding.ratingDonut.setProgress((film.rating * 10).toInt())
+        binding.ratingDonut.setProgress((film.rating * 10).toInt())
     }
 }
