@@ -48,7 +48,8 @@ class FavoritesFragment : Fragment() {
             addItemDecoration(decorator)
         }
         //Кладем нашу БД в RV
-        filmsAdapter.addItems(FilmDB.filmDataBase)
+        val result = FilmDB.filmsDataBase.filter { it.isInFavorites }
+        filmsAdapter.addItems(result)
     }
 
     override fun onDestroyView() {
