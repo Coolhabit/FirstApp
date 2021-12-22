@@ -34,8 +34,6 @@ class FavoritesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         AnimationHelper.performFragmentCircularRevealAnimation(binding!!.favoritesFragmentRoot, requireActivity(), 1)
-        //Получаем список при транзакции фрагмента
-        val favoritesList: List<Film> = emptyList()
 
         binding?.favoritesRecycler?.apply {
             filmsAdapter =

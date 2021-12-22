@@ -56,13 +56,12 @@ class HomeFragment : Fragment() {
 
         initSearchView()
 
-        //находим наш RV
         initRecycler()
+
         //Кладем нашу БД в RV
         viewModel.filmsListLiveData.observe(viewLifecycleOwner, Observer<List<Film>> {
             filmsDataBase = it
         })
-
     }
 
     private fun initSearchView() {
