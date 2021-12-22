@@ -1,4 +1,4 @@
-package ru.coolhabit.firstapp
+package ru.coolhabit.firstapp.utils
 
 import android.app.Activity
 import android.view.View

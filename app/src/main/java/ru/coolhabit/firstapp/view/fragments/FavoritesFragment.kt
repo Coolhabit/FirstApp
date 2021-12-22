@@ -1,13 +1,18 @@
-package ru.coolhabit.firstapp
+package ru.coolhabit.firstapp.view.fragments
 
-import TopSpacingItemDecoration
+import ru.coolhabit.firstapp.view.rv_adapters.TopSpacingItemDecoration
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import ru.coolhabit.firstapp.view.rv_adapters.FilmListRecyclerAdapter
+import ru.coolhabit.firstapp.data.MainRepository
 import ru.coolhabit.firstapp.databinding.FragmentFavoritesBinding
+import ru.coolhabit.firstapp.domain.Film
+import ru.coolhabit.firstapp.utils.AnimationHelper
+import ru.coolhabit.firstapp.view.MainActivity
 
 class FavoritesFragment : Fragment() {
     private var binding: FragmentFavoritesBinding? = null
@@ -48,7 +53,7 @@ class FavoritesFragment : Fragment() {
             addItemDecoration(decorator)
         }
         //Кладем нашу БД в RV
-        val result = FilmDB.filmsDataBase.filter { it.isInFavorites }
+        val result = MainRepository.filmsDataBase.filter { it.isInFavorites }
         filmsAdapter.addItems(result)
     }
 

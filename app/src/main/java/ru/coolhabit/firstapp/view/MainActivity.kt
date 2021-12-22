@@ -1,10 +1,13 @@
-package ru.coolhabit.firstapp
+package ru.coolhabit.firstapp.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.Fragment
+import ru.coolhabit.firstapp.*
 import ru.coolhabit.firstapp.databinding.ActivityMainBinding
+import ru.coolhabit.firstapp.domain.Film
+import ru.coolhabit.firstapp.view.fragments.*
 
 
 class MainActivity : AppCompatActivity() {

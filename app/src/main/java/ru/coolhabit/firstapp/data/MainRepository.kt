@@ -1,6 +1,9 @@
-package ru.coolhabit.firstapp
+package ru.coolhabit.firstapp.data
 
-class FilmDB {
+import ru.coolhabit.firstapp.domain.Film
+import ru.coolhabit.firstapp.R
+
+class MainRepository {
     companion object {
         val filmsDataBase: List<Film> = listOf(
             Film("Dune", R.drawable.poster1, "Feature adaptation of Frank Herbert's science " +

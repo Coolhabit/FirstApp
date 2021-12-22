@@ -1,4 +1,4 @@
-package ru.coolhabit.firstapp
+package ru.coolhabit.firstapp.view.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import ru.coolhabit.firstapp.R
 import ru.coolhabit.firstapp.databinding.FragmentDetailsBinding
+import ru.coolhabit.firstapp.domain.Film
 
 class DetailsFragment : Fragment() {
     private lateinit var film: Film

@@ -1,4 +1,4 @@
-package ru.coolhabit.firstapp
+package ru.coolhabit.firstapp.domain
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

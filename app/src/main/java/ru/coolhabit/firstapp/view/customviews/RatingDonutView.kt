@@ -1,4 +1,4 @@
-package ru.coolhabit.firstapp
+package ru.coolhabit.firstapp.view.customviews
 
 import android.animation.ValueAnimator
 import android.content.Context
@@ -6,8 +6,7 @@ import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
 import android.view.animation.AccelerateDecelerateInterpolator
-import android.view.animation.LinearInterpolator
-import kotlin.math.roundToInt
+import ru.coolhabit.firstapp.R
 
 class RatingDonutView @JvmOverloads constructor(
     context: Context,

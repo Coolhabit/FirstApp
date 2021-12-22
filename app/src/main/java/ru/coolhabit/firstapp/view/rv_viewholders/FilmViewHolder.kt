@@ -1,10 +1,9 @@
-package ru.coolhabit.firstapp
+package ru.coolhabit.firstapp.view.rv_viewholders
 
-import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import ru.coolhabit.firstapp.databinding.FilmItemBinding
-
+import ru.coolhabit.firstapp.domain.Film
 
 
 //В конструктор класс передается layout, который мы создали(film_item.xml)

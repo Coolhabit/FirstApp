@@ -1,10 +1,11 @@
-package ru.coolhabit.firstapp
+package ru.coolhabit.firstapp.view.fragments
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import ru.coolhabit.firstapp.databinding.FragmentSelectionsBinding
+import ru.coolhabit.firstapp.utils.AnimationHelper
 
 class SelectionsFragment : Fragment() {
 
