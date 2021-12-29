@@ -8,6 +8,11 @@ import ru.coolhabit.firstapp.*
 import ru.coolhabit.firstapp.databinding.ActivityMainBinding
 import ru.coolhabit.firstapp.domain.Film
 import ru.coolhabit.firstapp.view.fragments.*
+import java.io.BufferedReader
+import java.io.InputStreamReader
+import java.net.URL
+import java.util.concurrent.Executors
+import javax.net.ssl.HttpsURLConnection
 
 
 class MainActivity : AppCompatActivity() {
@@ -15,7 +20,6 @@ class MainActivity : AppCompatActivity() {
     companion object {
         const val FILM = "film"
     }
-
 
     private lateinit var binding: ActivityMainBinding
 
@@ -101,6 +105,8 @@ class MainActivity : AppCompatActivity() {
             .addToBackStack(null)
             .commit()
     }
+
+
 
 
 }
