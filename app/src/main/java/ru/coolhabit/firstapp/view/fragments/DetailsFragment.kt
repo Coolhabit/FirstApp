@@ -6,23 +6,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import ru.coolhabit.firstapp.R
+import ru.coolhabit.firstapp.data.ApiConstants
 import ru.coolhabit.firstapp.databinding.FragmentDetailsBinding
 import ru.coolhabit.firstapp.domain.Film
 
 class DetailsFragment : Fragment() {
     private lateinit var film: Film
-    private var detailBinding: FragmentDetailsBinding? = null
-    private val binding get() = detailBinding!!
+    private lateinit var binding: FragmentDetailsBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        detailBinding = FragmentDetailsBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        binding = FragmentDetailsBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -30,17 +30,17 @@ class DetailsFragment : Fragment() {
 
         setFilmsDetails()
 
-        detailBinding?.detailsFabFavorites?.setOnClickListener {
+        binding.detailsFabFavorites.setOnClickListener {
             if (!film.isInFavorites) {
-                detailBinding?.detailsFabFavorites?.setImageResource(R.drawable.ic_baseline_favorite_24)
+                binding.detailsFabFavorites.setImageResource(R.drawable.ic_baseline_favorite_24)
                 film.isInFavorites = true
             } else {
-                detailBinding?.detailsFabFavorites?.setImageResource(R.drawable.ic_baseline_favorite_border_24)
+                binding.detailsFabFavorites.setImageResource(R.drawable.ic_baseline_favorite_border_24)
                 film.isInFavorites = false
             }
         }
 
-        detailBinding?.detailsFabShare!!.setOnClickListener {
+        binding.detailsFabShare.setOnClickListener {
             //Создаем интент
             val intent = Intent()
             //Укзываем action с которым он запускается
@@ -57,23 +57,21 @@ class DetailsFragment : Fragment() {
         }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        detailBinding = null
-    }
-
     private fun setFilmsDetails() {
         //Получаем наш фильм из переданного бандла
         film = arguments?.get("film") as Film
 
         //Устанавливаем заголовок
-        detailBinding?.detailsToolbar?.title = film.title
+        binding.detailsToolbar.title = film.title
         //Устанавливаем картинку
-        detailBinding?.detailsPoster?.setImageResource(film.poster)
+        Glide.with(this)
+            .load(ApiConstants.IMAGES_URL + "w780" + film.poster)
+            .centerCrop()
+            .into(binding.detailsPoster)
         //Устанавливаем описание
-        detailBinding?.detailsDescription?.text = film.description
+        binding.detailsDescription.text = film.description
 
-        detailBinding?.detailsFabFavorites?.setImageResource(
+        binding.detailsFabFavorites.setImageResource(
             if (film.isInFavorites) R.drawable.ic_baseline_favorite_24
             else R.drawable.ic_baseline_favorite_border_24
         )

@@ -2,6 +2,7 @@ package ru.coolhabit.firstapp.view.rv_viewholders
 
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import ru.coolhabit.firstapp.data.ApiConstants
 import ru.coolhabit.firstapp.databinding.FilmItemBinding
 import ru.coolhabit.firstapp.domain.Film
 
@@ -28,7 +29,7 @@ class FilmViewHolder(val binding: FilmItemBinding) : RecyclerView.ViewHolder(bin
         //Указываем контейнер, в котором будет "жить" наша картинка
         Glide.with(itemView)
             //Загружаем сам ресурс
-            .load(film.poster)
+            .load(ApiConstants.IMAGES_URL + "w342" + film.poster)
             //Центруем изображение
             .centerCrop()
             //Указываем ImageView, куда будем загружать изображение

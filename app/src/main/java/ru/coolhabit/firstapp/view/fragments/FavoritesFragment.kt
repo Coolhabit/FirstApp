@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import ru.coolhabit.firstapp.view.rv_adapters.FilmListRecyclerAdapter
-import ru.coolhabit.firstapp.data.MainRepository
 import ru.coolhabit.firstapp.databinding.FragmentFavoritesBinding
 import ru.coolhabit.firstapp.domain.Film
 import ru.coolhabit.firstapp.utils.AnimationHelper
@@ -51,8 +50,8 @@ class FavoritesFragment : Fragment() {
             addItemDecoration(decorator)
         }
         //Кладем нашу БД в RV
-        val result = MainRepository.filmsDataBase.filter { it.isInFavorites }
-        filmsAdapter.addItems(result)
+//        val result = MainRepository.filmsDataBase.filter { it.isInFavorites }
+//        filmsAdapter.addItems(result)
     }
 
     override fun onDestroyView() {

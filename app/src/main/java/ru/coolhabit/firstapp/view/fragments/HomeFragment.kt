@@ -24,10 +24,10 @@ class HomeFragment : Fragment() {
         ViewModelProvider.NewInstanceFactory().create(HomeFragmentViewModel::class.java)
     }
 
-    private var bindingHome: FragmentHomeBinding? = null
-    private val binding get() = bindingHome!!
-
     private lateinit var filmsAdapter: FilmListRecyclerAdapter
+    private lateinit var binding: FragmentHomeBinding
+
+
     private var filmsDataBase = listOf<Film>()
         //Используем backing field
         set(value) {
@@ -39,14 +39,18 @@ class HomeFragment : Fragment() {
             filmsAdapter.addItems(field)
         }
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        retainInstance = true
+    }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        bindingHome = FragmentHomeBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -54,7 +58,7 @@ class HomeFragment : Fragment() {
 
         AnimationHelper.performFragmentCircularRevealAnimation(binding.homeFragmentRoot, requireActivity(), 1)
 
-        initSearchView()
+//        initSearchView()
 
         initRecycler()
 
@@ -64,39 +68,39 @@ class HomeFragment : Fragment() {
         })
     }
 
-    private fun initSearchView() {
-        bindingHome?.searchView?.setOnClickListener {
-            bindingHome?.searchView?.isIconified = false
-        }
-
-        //Подключаем слушателя изменений введенного текста в поиска
-        bindingHome?.searchView?.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
-            //Этот метод отрабатывает при нажатии кнопки "поиск" на софт клавиатуре
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                return true
-            }
-            //Этот метод отрабатывает на каждое изменения текста
-            override fun onQueryTextChange(newText: String): Boolean {
-                //Если ввод пуст то вставляем в адаптер всю БД
-                if (newText.isEmpty()) {
-                    filmsAdapter.addItems(MainRepository.filmsDataBase)
-                    return true
-                }
-                //Фильтруем список на поискк подходящих сочетаний
-                val result = MainRepository.filmsDataBase.filter {
-                    //Чтобы все работало правильно, нужно и запрос, и имя фильма приводить к нижнему регистру
-                    it.title.lowercase(Locale.getDefault()).contains(newText.lowercase(Locale.getDefault()))
-                }
-                //Добавляем в адаптер
-                filmsAdapter.addItems(result)
-                return true
-            }
-        })
-    }
+//    private fun initSearchView() {
+//        bindingHome?.searchView?.setOnClickListener {
+//            bindingHome?.searchView?.isIconified = false
+//        }
+//
+//        //Подключаем слушателя изменений введенного текста в поиска
+//        bindingHome?.searchView?.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+//            //Этот метод отрабатывает при нажатии кнопки "поиск" на софт клавиатуре
+//            override fun onQueryTextSubmit(query: String?): Boolean {
+//                return true
+//            }
+//            //Этот метод отрабатывает на каждое изменения текста
+//            override fun onQueryTextChange(newText: String): Boolean {
+//                //Если ввод пуст то вставляем в адаптер всю БД
+//                if (newText.isEmpty()) {
+//                    filmsAdapter.addItems(MainRepository.filmsDataBase)
+//                    return true
+//                }
+//                //Фильтруем список на поискк подходящих сочетаний
+//                val result = MainRepository.filmsDataBase.filter {
+//                    //Чтобы все работало правильно, нужно и запрос, и имя фильма приводить к нижнему регистру
+//                    it.title.lowercase(Locale.getDefault()).contains(newText.lowercase(Locale.getDefault()))
+//                }
+//                //Добавляем в адаптер
+//                filmsAdapter.addItems(result)
+//                return true
+//            }
+//        })
+//    }
 
     private fun initRecycler() {
         //находим наш RV
-        bindingHome?.mainRecycler?.apply {
+        binding.mainRecycler.apply {
             filmsAdapter =
                 FilmListRecyclerAdapter(object : FilmListRecyclerAdapter.OnItemClickListener {
                     override fun click(film: Film) {
@@ -111,10 +115,5 @@ class HomeFragment : Fragment() {
             val decorator = TopSpacingItemDecoration(8)
             addItemDecoration(decorator)
         }
-    }
-
-    override fun onDestroyView() {
-        bindingHome = null
-        super.onDestroyView()
     }
 }
