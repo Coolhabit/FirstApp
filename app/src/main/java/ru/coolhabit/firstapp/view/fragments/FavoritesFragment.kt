@@ -6,18 +6,21 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import ru.coolhabit.firstapp.view.rv_adapters.FilmListRecyclerAdapter
 import ru.coolhabit.firstapp.databinding.FragmentFavoritesBinding
 import ru.coolhabit.firstapp.domain.Film
 import ru.coolhabit.firstapp.utils.AnimationHelper
 import ru.coolhabit.firstapp.view.MainActivity
+import ru.coolhabit.firstapp.viewmodel.HomeFragmentViewModel
 
 class FavoritesFragment : Fragment() {
-    private var binding: FragmentFavoritesBinding? = null
-    private val _binding: FragmentFavoritesBinding get() = binding!!
+    private val viewModel by lazy {
+        ViewModelProvider.NewInstanceFactory().create(HomeFragmentViewModel::class.java)
+    }
 
-
+    private lateinit var binding: FragmentFavoritesBinding
     private lateinit var filmsAdapter: FilmListRecyclerAdapter
 
     override fun onCreateView(
@@ -26,15 +29,15 @@ class FavoritesFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentFavoritesBinding.inflate(inflater, container, false)
-        return _binding.root
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        AnimationHelper.performFragmentCircularRevealAnimation(binding!!.favoritesFragmentRoot, requireActivity(), 1)
+        AnimationHelper.performFragmentCircularRevealAnimation(binding.favoritesFragmentRoot, requireActivity(), 1)
 
-        binding?.favoritesRecycler?.apply {
+        binding.favoritesRecycler.apply {
             filmsAdapter =
                 FilmListRecyclerAdapter(object : FilmListRecyclerAdapter.OnItemClickListener {
                     override fun click(film: Film) {
@@ -49,13 +52,8 @@ class FavoritesFragment : Fragment() {
             val decorator = TopSpacingItemDecoration(8)
             addItemDecoration(decorator)
         }
-        //Кладем нашу БД в RV
-//        val result = MainRepository.filmsDataBase.filter { it.isInFavorites }
-//        filmsAdapter.addItems(result)
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        binding = null
+        viewModel.filmsListLiveData.observe(viewLifecycleOwner) { list ->
+            filmsAdapter.addItems(list.filter { it.isInFavorites })
+        }
     }
 }
