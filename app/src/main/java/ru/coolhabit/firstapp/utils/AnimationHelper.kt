@@ -43,7 +43,13 @@ object AnimationHelper {
                         val startRadius = startRad
                         val endRadius = hypot(rootView.width.toDouble(), rootView.height.toDouble())
                         //Создаем саму анимацию
-                        ViewAnimationUtils.createCircularReveal(rootView, x, y, startRadius.toFloat(), endRadius.toFloat()).apply {
+                        ViewAnimationUtils.createCircularReveal(
+                            rootView,
+                            x,
+                            y,
+                            startRadius.toFloat(),
+                            endRadius.toFloat()
+                        ).apply {
                             //Устанавливаем время анимации
                             duration = DURATION.toLong()
                             //Интерполятор для более естественной анимации

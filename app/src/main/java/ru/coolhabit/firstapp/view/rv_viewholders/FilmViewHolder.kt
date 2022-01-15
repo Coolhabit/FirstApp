@@ -15,6 +15,7 @@ class FilmViewHolder(val binding: FilmItemBinding) : RecyclerView.ViewHolder(bin
     private val title = binding.title
     private val poster = binding.poster
     private val description = binding.description
+
     //Вот здесь мы находим в верстке наш прогресс бар для рейтинга
     private val ratingDonut = binding.ratingDonut
 

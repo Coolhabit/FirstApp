@@ -7,11 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import ru.coolhabit.firstapp.view.rv_adapters.FilmListRecyclerAdapter
-import ru.coolhabit.firstapp.data.MainRepository
 import ru.coolhabit.firstapp.databinding.FragmentHomeBinding
 import ru.coolhabit.firstapp.domain.Film
 import ru.coolhabit.firstapp.utils.AnimationHelper

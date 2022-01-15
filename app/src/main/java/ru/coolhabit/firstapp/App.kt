@@ -44,12 +44,11 @@ class App : Application() {
             //Добавляем кастомный клиент
             .client(okHttpClient)
             .build()
-//Создаем сам сервис с методами для запросов
+        //Создаем сам сервис с методами для запросов
         retrofitService = retrofit.create(TmdbApi::class.java)
-//Инициализируем интерактор
+        //Инициализируем интерактор
         interactor = Interactor(repo, retrofitService)
     }
-
 
 
     companion object {
