@@ -7,7 +7,7 @@ import ru.coolhabit.firstapp.domain.Film
 import ru.coolhabit.firstapp.domain.Interactor
 import javax.inject.Inject
 
-class HomeFragmentViewModel : ViewModel() {
+class FavoritesFragmentViewModel: ViewModel() {
     val filmsListLiveData: MutableLiveData<List<Film>> = MutableLiveData()
 
     //Инициализируем интерактор
