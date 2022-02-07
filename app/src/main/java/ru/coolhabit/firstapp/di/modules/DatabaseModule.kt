@@ -1,5 +1,6 @@
 package ru.coolhabit.firstapp.di.modules
 
+import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import ru.coolhabit.firstapp.data.MainRepository
