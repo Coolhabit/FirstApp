@@ -2,33 +2,49 @@ package ru.coolhabit.firstapp.data.entity
 
 import com.google.gson.annotations.SerializedName
 
+private const val ADULT = "adult"
+private const val BACKDROP = "backdrop_path"
+private const val GENRE = "genre_ids"
+private const val ID = "id"
+private const val LANGUAGE = "original_language"
+private const val ORIG_TITLE = "original_title"
+private const val OVERVIEW = "overview"
+private const val POPULARITY = "popularity"
+private const val POSTER = "poster_path"
+private const val RELEASE = "release_date"
+private const val TITLE = "title"
+private const val VIDEO = "video"
+private const val VOTE_AV = "vote_average"
+private const val VOTE_C = "vote_count"
+
+
 data class TmdbFilm(
-    @SerializedName("adult")
+    @SerializedName(ADULT)
     val adult: Boolean,
-    @SerializedName("backdrop_path")
+    @SerializedName(BACKDROP)
     val backdropPath: String,
-    @SerializedName("genre_ids")
+    @SerializedName(GENRE)
     val genreIds: List<Int>,
-    @SerializedName("id")
+    @SerializedName(ID)
     val id: Int,
-    @SerializedName("original_language")
+    @SerializedName(LANGUAGE)
     val originalLanguage: String,
-    @SerializedName("original_title")
+    @SerializedName(ORIG_TITLE)
     val originalTitle: String,
-    @SerializedName("overview")
+    @SerializedName(OVERVIEW)
     val overview: String,
-    @SerializedName("popularity")
+    @SerializedName(POPULARITY)
     val popularity: Double,
-    @SerializedName("poster_path")
+    @SerializedName(POSTER)
     val posterPath: String,
-    @SerializedName("release_date")
+    @SerializedName(RELEASE)
     val releaseDate: String,
-    @SerializedName("title")
+    @SerializedName(TITLE)
     val title: String,
-    @SerializedName("video")
+    @SerializedName(VIDEO)
     val video: Boolean,
-    @SerializedName("vote_average")
+    @SerializedName(VOTE_AV)
     val voteAverage: Double,
-    @SerializedName("vote_count")
+    @SerializedName(VOTE_C)
     val voteCount: Int
 )
