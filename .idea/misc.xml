@@ -9,6 +9,7 @@
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/drawable/background_main.xml" value="0.24814814814814815" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/drawable/background_search_view.xml" value="0.22962962962962963" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/drawable/background_selections.xml" value="0.24814814814814815" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/drawable/background_settings.xml" value="0.198" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/drawable/background_watch_later.xml" value="0.24814814814814815" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/drawable/corner_backgr.xml" value="0.39453125" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/drawable/corner_background.xml" value="0.2703125" />
@@ -31,6 +32,7 @@
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/layout/fragment_favorites.xml" value="0.15760869565217392" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/layout/fragment_home.xml" value="0.15760869565217392" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/layout/fragment_selections.xml" value="0.18206521739130435" />
+        <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/layout/fragment_settings.xml" value="0.25416666666666665" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/layout/fragment_watch_later.xml" value="0.18206521739130435" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/layout/merge_home_screen_content.xml" value="0.1816123188405797" />
         <entry key="..\:/Android/SDK/AndroidStudioProjects/FirstApp/app/src/main/res/menu/nav.xml" value="0.25416666666666665" />

@@ -4,8 +4,8 @@ import dagger.Component
 import ru.coolhabit.firstapp.di.modules.DatabaseModule
 import ru.coolhabit.firstapp.di.modules.DomainModule
 import ru.coolhabit.firstapp.di.modules.RemoteModule
-import ru.coolhabit.firstapp.viewmodel.FavoritesFragmentViewModel
 import ru.coolhabit.firstapp.viewmodel.HomeFragmentViewModel
+import ru.coolhabit.firstapp.viewmodel.SettingsFragmentViewModel
 import javax.inject.Singleton
 
 @Singleton
@@ -18,8 +18,8 @@ import javax.inject.Singleton
     ]
 )
 interface AppComponent {
-    //метод для того, чтобы появилось внедрение зависимости в HomeFragmentViewModel
+    //метод для того, чтобы появилась возможность внедрять зависимости в HomeFragmentViewModel
     fun inject(homeFragmentViewModel: HomeFragmentViewModel)
-
-    fun inject(favoritesFragmentViewModel: FavoritesFragmentViewModel)
+    //метод для того, чтобы появилась возможность внедрять зависимости в SettingsFragmentViewModel
+    fun inject(settingsFragmentViewModel: SettingsFragmentViewModel)
 }
