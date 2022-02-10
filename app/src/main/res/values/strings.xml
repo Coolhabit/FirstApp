@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">NorthdaleNetworkApp</string>
+    <string name="enter">Вход</string>
+    <string name="next_btn">Далее</string>
+    <string name="login_hint">Логин</string>
+    <string name="password_hint">Пароль</string>
+</resources>
