@@ -1,14 +1,19 @@
 package ru.coolhabit.firstapp.di.modules
 
-import dagger.Binds
+import android.content.Context
 import dagger.Module
 import dagger.Provides
 import ru.coolhabit.firstapp.data.MainRepository
+import ru.coolhabit.firstapp.data.db.DatabaseHelper
 import javax.inject.Singleton
 
 @Module
 class DatabaseModule {
+    @Singleton
+    @Provides
+    fun provideDatabaseHelper(context: Context) = DatabaseHelper(context)
+
     @Provides
     @Singleton
-    fun provideRepository() = MainRepository()
+    fun provideRepository(databaseHelper: DatabaseHelper) = MainRepository(databaseHelper)
 }

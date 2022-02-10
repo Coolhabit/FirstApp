@@ -4,7 +4,8 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
-import ru.coolhabit.firstapp.data.entity.TmdbResultsDto
+import ru.coolhabit.firstapp.data.entity.TmdbResults
+
 
 interface TmdbApi {
     @GET("3/movie/{category}")
@@ -13,5 +14,5 @@ interface TmdbApi {
         @Query("api_key") apiKey: String,
         @Query("language") language: String,
         @Query("page") page: Int
-    ): Call<TmdbResultsDto>
+    ): Call<TmdbResults>
 }

@@ -1,5 +1,6 @@
 package ru.coolhabit.firstapp.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import ru.coolhabit.firstapp.App
@@ -26,6 +27,8 @@ class HomeFragmentViewModel : ViewModel() {
             }
 
             override fun onFailure() {
+                Log.d("onfailure", "DBLoaded", null)
+                filmsListLiveData.postValue(interactor.getFilmsFromDB())
             }
         })
     }
