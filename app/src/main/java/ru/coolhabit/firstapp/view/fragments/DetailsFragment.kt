@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide
 import ru.coolhabit.firstapp.R
 import ru.coolhabit.firstapp.data.ApiConstants
 import ru.coolhabit.firstapp.databinding.FragmentDetailsBinding
-import ru.coolhabit.firstapp.domain.Film
+import ru.coolhabit.firstapp.data.entity.Film
 
 class DetailsFragment : Fragment() {
     private lateinit var film: Film

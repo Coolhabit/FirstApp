@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.coolhabit.firstapp.view.rv_viewholders.FilmViewHolder
 import ru.coolhabit.firstapp.databinding.FilmItemBinding
-import ru.coolhabit.firstapp.domain.Film
+import ru.coolhabit.firstapp.data.entity.Film
 
 //в параметр передаем слушатель, чтобы мы потом могли обрабатывать нажатия из класса Activity
 class FilmListRecyclerAdapter(private val clickListener: OnItemClickListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {

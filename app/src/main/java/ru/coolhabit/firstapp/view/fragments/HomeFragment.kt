@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import ru.coolhabit.firstapp.view.rv_adapters.FilmListRecyclerAdapter
 import ru.coolhabit.firstapp.databinding.FragmentHomeBinding
-import ru.coolhabit.firstapp.domain.Film
+import ru.coolhabit.firstapp.data.entity.Film
 import ru.coolhabit.firstapp.utils.AnimationHelper
 import ru.coolhabit.firstapp.view.MainActivity
 import ru.coolhabit.firstapp.viewmodel.HomeFragmentViewModel

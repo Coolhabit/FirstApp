@@ -4,7 +4,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import ru.coolhabit.firstapp.data.ApiConstants
 import ru.coolhabit.firstapp.databinding.FilmItemBinding
-import ru.coolhabit.firstapp.domain.Film
+import ru.coolhabit.firstapp.data.entity.Film
 
 
 //В конструктор класс передается layout, который мы создали(film_item.xml)

@@ -1,6 +1,6 @@
 package ru.coolhabit.firstapp.utils
 
-import ru.coolhabit.firstapp.domain.Film
+import ru.coolhabit.firstapp.data.entity.Film
 import ru.coolhabit.firstapp.data.entity.TmdbFilm
 
 object Converter {

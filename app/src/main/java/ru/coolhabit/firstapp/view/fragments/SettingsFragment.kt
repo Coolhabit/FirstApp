@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import org.koin.android.ext.android.bind
 import ru.coolhabit.firstapp.R
 import ru.coolhabit.firstapp.databinding.FragmentSettingsBinding
 import ru.coolhabit.firstapp.utils.AnimationHelper

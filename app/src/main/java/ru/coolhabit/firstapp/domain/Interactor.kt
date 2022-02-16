@@ -6,6 +6,7 @@ import retrofit2.Response
 import ru.coolhabit.firstapp.data.API
 import ru.coolhabit.firstapp.data.MainRepository
 import ru.coolhabit.firstapp.data.TmdbApi
+import ru.coolhabit.firstapp.data.entity.Film
 import ru.coolhabit.firstapp.data.entity.TmdbResults
 import ru.coolhabit.firstapp.data.shared.PreferenceProvider
 import ru.coolhabit.firstapp.utils.Converter
@@ -20,7 +21,7 @@ class Interactor(private val repo: MainRepository, private val retrofitService: 
                 val list = Converter.convertApiListToDtoList(response.body()?.tmdbFilms)
                 //Кладем фильмы в бд
                 list.forEach {
-                    repo.putToDb(film = it)
+                    repo.putToDb(list)
                 }
                 callback.onSuccess(list)
             }
