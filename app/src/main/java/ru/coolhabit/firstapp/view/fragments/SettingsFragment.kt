@@ -31,14 +31,14 @@ class SettingsFragment : Fragment() {
         //Подключаем анимации и передаем номер позиции у кнопки в нижнем меню
         AnimationHelper.performFragmentCircularRevealAnimation(binding.settingsFragmentRoot, requireActivity(), 5)
         //Слушаем, какой у нас сейчас выбран вариант в настройках
-        viewModel.categoryPropertyLifeData.observe(viewLifecycleOwner, Observer<String> {
+        viewModel.categoryPropertyLifeData.observe(viewLifecycleOwner) {
             when(it) {
                 POPULAR_CATEGORY -> binding.radioGroup.check(R.id.radio_popular)
                 TOP_RATED_CATEGORY -> binding.radioGroup.check(R.id.radio_top_rated)
                 UPCOMING_CATEGORY -> binding.radioGroup.check(R.id.radio_upcoming)
                 NOW_PLAYING_CATEGORY -> binding.radioGroup.check(R.id.radio_now_playing)
             }
-        })
+        }
         //Слушатель для отправки нового состояния в настройки
         binding.radioGroup.setOnCheckedChangeListener { group, checkedId ->
             when(checkedId) {

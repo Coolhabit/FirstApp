@@ -5,7 +5,6 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import io.reactivex.rxjava3.core.Observable
-import kotlinx.coroutines.flow.Flow
 import ru.coolhabit.firstapp.data.entity.Film
 
 @Dao
@@ -17,4 +16,7 @@ interface FilmDao {
     //Кладём список в БД, в случае конфликта перезаписываем
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertAll(list: List<Film>)
+
+    @Query("DELETE FROM cached_films")
+    fun clearFilms()
 }

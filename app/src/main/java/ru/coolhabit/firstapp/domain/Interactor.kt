@@ -1,15 +1,9 @@
 package ru.coolhabit.firstapp.domain
 
-import androidx.lifecycle.LiveData
 import io.reactivex.rxjava3.core.Completable
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.schedulers.Schedulers
 import io.reactivex.rxjava3.subjects.BehaviorSubject
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -20,12 +14,10 @@ import ru.coolhabit.firstapp.data.entity.Film
 import ru.coolhabit.firstapp.data.entity.TmdbResults
 import ru.coolhabit.firstapp.data.shared.PreferenceProvider
 import ru.coolhabit.firstapp.utils.Converter
-import ru.coolhabit.firstapp.viewmodel.HomeFragmentViewModel
 
 
 
 class Interactor(private val repo: MainRepository, private val retrofitService: TmdbApi, private val preferences: PreferenceProvider) {
-    val scope: CoroutineScope = CoroutineScope(Dispatchers.IO)
     var progressBarState: BehaviorSubject<Boolean> = BehaviorSubject.create()
 
     fun getFilmsFromApi(page: Int) {
@@ -54,6 +46,14 @@ class Interactor(private val repo: MainRepository, private val retrofitService: 
     //Метод для сохранения настроек
     fun saveDefaultCategoryToPreferences(category: String) {
         preferences.saveDefaultCategory(category)
+    }
+    //метод для очистки списка
+    fun clearListAfterCategoryChange() {
+        Completable.fromSingle<List<Film>> {
+            repo.clearDb()
+        }
+            .subscribeOn(Schedulers.io())
+            .subscribe()
     }
     //Метод для получения настроек
     fun getDefaultCategoryFromPreferences() = preferences.getDefaultCategory()

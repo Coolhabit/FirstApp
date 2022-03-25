@@ -28,5 +28,10 @@ class SettingsFragmentViewModel : ViewModel() {
         interactor.saveDefaultCategoryToPreferences(category)
         //И сразу забираем, чтобы сохранить состояние в модели
         getCategoryProperty()
+        clearListAfter()
+    }
+    fun clearListAfter() {
+        interactor.clearListAfterCategoryChange()
+
     }
 }

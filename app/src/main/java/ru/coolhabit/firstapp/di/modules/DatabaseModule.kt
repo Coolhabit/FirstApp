@@ -7,7 +7,6 @@ import dagger.Provides
 import ru.coolhabit.firstapp.data.MainRepository
 import ru.coolhabit.firstapp.data.dao.FilmDao
 import ru.coolhabit.firstapp.data.db.AppDatabase
-import ru.coolhabit.firstapp.data.db.DatabaseHelper
 import javax.inject.Singleton
 
 @Module
