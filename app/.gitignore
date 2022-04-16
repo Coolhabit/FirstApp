@@ -1,1 +1,9 @@
 /build
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+/src/main/java/ru/coolhabit/firstapp/data/API.kt
+*.iml
