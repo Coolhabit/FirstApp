@@ -7,21 +7,28 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 import ru.coolhabit.firstapp.data.entity.TmdbResults
 
+private const val CATEGORY = "category"
+private const val API_KEY = "api_key"
+private const val LANGUAGE = "language"
+private const val PAGE = "page"
+private const val QUERY = "query"
+
+
 
 interface TmdbApi {
     @GET("3/movie/{category}")
     fun getFilms(
-        @Path("category") category: String,
-        @Query("api_key") apiKey: String,
-        @Query("language") language: String,
-        @Query("page") page: Int
+        @Path(CATEGORY) category: String,
+        @Query(API_KEY) apiKey: String,
+        @Query(LANGUAGE) language: String,
+        @Query(PAGE) page: Int
     ): Call<TmdbResults>
 
     @GET("3/search/movie")
     fun getFilmFromSearch(
-        @Query("api_key") apiKey: String,
-        @Query("language") language: String,
-        @Query("query") query: String,
-        @Query("page") page: Int
+        @Query(API_KEY) apiKey: String,
+        @Query(LANGUAGE) language: String,
+        @Query(QUERY) query: String,
+        @Query(PAGE) page: Int
     ): Observable<TmdbResults>
 }

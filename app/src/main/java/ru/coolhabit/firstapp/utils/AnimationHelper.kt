@@ -10,11 +10,11 @@ import kotlin.math.roundToInt
 
 object AnimationHelper {
     //Это переменная для того, чтобы круг проявления расходился именно от иконки меню навигации
-    private const val menuItems = 5
+    private const val MENU_ITEMS = 5
     private const val DURATION = 500
-    private const val startRad = 0
+    private const val START_RAD = 0
 
-    private const val animStart = 2
+    private const val ANIM_START = 2
     private const val STEP = 2
     private const val POSITION = 1
 
@@ -34,13 +34,13 @@ object AnimationHelper {
                     //Возвращаемся в главный тред, чтобы выполнить анимацию
                     activity.runOnUiThread {
                         //Cуперсложная математика вычисления старта анимации
-                        val itemCenter = rootView.width / (menuItems * animStart)
+                        val itemCenter = rootView.width / (MENU_ITEMS * ANIM_START)
                         val step = (itemCenter * STEP) * (position - POSITION) + itemCenter
 
                         val x: Int = step
                         val y: Int = rootView.y.roundToInt() + rootView.height
 
-                        val startRadius = startRad
+                        val startRadius = START_RAD
                         val endRadius = hypot(rootView.width.toDouble(), rootView.height.toDouble())
                         //Создаем саму анимацию
                         ViewAnimationUtils.createCircularReveal(
