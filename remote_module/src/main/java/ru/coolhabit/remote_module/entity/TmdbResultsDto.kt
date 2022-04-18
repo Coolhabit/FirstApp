@@ -1,4 +1,4 @@
-package ru.coolhabit.firstapp.data.entity
+package ru.coolhabit.remote_module.entity
 
 import com.google.gson.annotations.SerializedName
 

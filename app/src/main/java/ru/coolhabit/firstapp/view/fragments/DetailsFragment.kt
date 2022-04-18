@@ -20,7 +20,7 @@ import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.coroutines.*
 import ru.coolhabit.firstapp.R
-import ru.coolhabit.firstapp.data.ApiConstants
+import ru.coolhabit.remote_module.entity.ApiConstants
 import ru.coolhabit.firstapp.databinding.FragmentDetailsBinding
 import ru.coolhabit.firstapp.data.entity.Film
 import ru.coolhabit.firstapp.viewmodel.DetailsFragmentViewModel
@@ -88,7 +88,7 @@ class DetailsFragment : Fragment() {
         binding.detailsToolbar.title = film.title
         //Устанавливаем картинку
         Glide.with(this)
-            .load(ApiConstants.IMAGES_URL + "w780" + film.poster)
+            .load(ru.coolhabit.remote_module.entity.ApiConstants.IMAGES_URL + "w780" + film.poster)
             .centerCrop()
             .into(binding.detailsPoster)
         //Устанавливаем описание
@@ -178,7 +178,7 @@ class DetailsFragment : Fragment() {
             binding.progressBar.isVisible = true
             //Создаем через async, так как нам нужен результат от работы, то есть Bitmap
             val job = scope.async {
-                viewModel.loadWallpaper(ApiConstants.IMAGES_URL + "original" + film.poster)
+                viewModel.loadWallpaper(ru.coolhabit.remote_module.entity.ApiConstants.IMAGES_URL + "original" + film.poster)
             }
             //Сохраняем в галерею, как только файл загрузится
             saveToGallery(job.await())

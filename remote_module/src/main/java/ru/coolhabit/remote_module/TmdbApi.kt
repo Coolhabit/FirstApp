@@ -1,11 +1,11 @@
-package ru.coolhabit.firstapp.data
+package ru.coolhabit.remote_module
 
 import io.reactivex.rxjava3.core.Observable
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query
-import ru.coolhabit.firstapp.data.entity.TmdbResults
+import ru.coolhabit.remote_module.entity.TmdbResults
 
 private const val CATEGORY = "category"
 private const val API_KEY = "api_key"
@@ -22,7 +22,7 @@ interface TmdbApi {
         @Query(API_KEY) apiKey: String,
         @Query(LANGUAGE) language: String,
         @Query(PAGE) page: Int
-    ): Call<TmdbResults>
+    ): Observable<TmdbResults>
 
     @GET("3/search/movie")
     fun getFilmFromSearch(

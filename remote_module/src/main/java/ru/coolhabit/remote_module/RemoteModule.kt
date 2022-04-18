@@ -1,4 +1,4 @@
-package ru.coolhabit.firstapp.di.modules
+package ru.coolhabit.remote_module
 
 import dagger.Module
 import dagger.Provides
@@ -7,9 +7,8 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import ru.coolhabit.firstapp.BuildConfig
-import ru.coolhabit.firstapp.data.ApiConstants
-import ru.coolhabit.firstapp.data.TmdbApi
+import ru.coolhabit.remote_module.BuildConfig
+import ru.coolhabit.remote_module.TmdbApi
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
@@ -35,7 +34,7 @@ class RemoteModule {
     @Singleton
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
         //Указываем базовый URL из констант
-        .baseUrl(ApiConstants.BASE_URL)
+        .baseUrl(ru.coolhabit.remote_module.entity.ApiConstants.BASE_URL)
         //Добавляем конвертер
         .addConverterFactory(GsonConverterFactory.create())
         //Добавляем поддержку RxJava
