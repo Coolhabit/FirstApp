@@ -7,8 +7,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import ru.coolhabit.remote_module.BuildConfig
-import ru.coolhabit.remote_module.TmdbApi
+import ru.coolhabit.remote_module.entity.ApiConstants
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
@@ -20,8 +19,8 @@ class RemoteModule {
     @Singleton
     fun provideOkHttpClient(): OkHttpClient = OkHttpClient.Builder()
         //Настраиваем таймауты для медленного интернета
-        .callTimeout(TIMEOUT, TimeUnit.SECONDS)
-        .readTimeout(TIMEOUT, TimeUnit.SECONDS)
+        .callTimeout(30, TimeUnit.SECONDS)
+        .readTimeout(30, TimeUnit.SECONDS)
         //Добавляем логгер
         .addInterceptor(HttpLoggingInterceptor().apply {
             if (BuildConfig.DEBUG) {
@@ -34,7 +33,7 @@ class RemoteModule {
     @Singleton
     fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
         //Указываем базовый URL из констант
-        .baseUrl(ru.coolhabit.remote_module.entity.ApiConstants.BASE_URL)
+        .baseUrl(ApiConstants.BASE_URL)
         //Добавляем конвертер
         .addConverterFactory(GsonConverterFactory.create())
         //Добавляем поддержку RxJava

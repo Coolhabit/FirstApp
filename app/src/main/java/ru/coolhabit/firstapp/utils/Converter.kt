@@ -1,7 +1,7 @@
 package ru.coolhabit.firstapp.utils
 
 import ru.coolhabit.firstapp.data.entity.Film
-import ru.coolhabit.firstapp.data.entity.TmdbFilm
+import ru.coolhabit.remote_module.entity.TmdbFilm
 
 object Converter {
     fun convertApiListToDtoList(list: List<TmdbFilm>?): List<Film> {

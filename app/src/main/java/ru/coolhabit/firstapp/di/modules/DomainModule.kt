@@ -4,9 +4,9 @@ import android.content.Context
 import dagger.Module
 import dagger.Provides
 import ru.coolhabit.firstapp.data.MainRepository
-import ru.coolhabit.firstapp.data.TmdbApi
 import ru.coolhabit.firstapp.data.shared.PreferenceProvider
 import ru.coolhabit.firstapp.domain.Interactor
+import ru.coolhabit.remote_module.TmdbApi
 import javax.inject.Singleton
 
 @Module
