@@ -33,7 +33,6 @@ class MainActivity : AppCompatActivity() {
             .add(R.id.fragment_placeholder, HomeFragment())
             .addToBackStack(null)
             .commit()
-
     }
 
     fun launchDetailsFragment(film: Film) {
