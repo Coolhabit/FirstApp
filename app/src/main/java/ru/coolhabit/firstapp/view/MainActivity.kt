@@ -8,8 +8,8 @@ import android.os.Bundle
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.fragment.app.Fragment
 import ru.coolhabit.firstapp.*
-import ru.coolhabit.firstapp.databinding.ActivityMainBinding
 import ru.coolhabit.firstapp.data.entity.Film
+import ru.coolhabit.firstapp.databinding.ActivityMainBinding
 import ru.coolhabit.firstapp.utils.ConnectionChecker
 import ru.coolhabit.firstapp.view.fragments.*
 

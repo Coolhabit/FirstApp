@@ -23,6 +23,7 @@ import ru.coolhabit.firstapp.R
 import ru.coolhabit.remote_module.entity.ApiConstants
 import ru.coolhabit.firstapp.databinding.FragmentDetailsBinding
 import ru.coolhabit.firstapp.data.entity.Film
+import ru.coolhabit.firstapp.view.notifications.NotificationHelper
 import ru.coolhabit.firstapp.viewmodel.DetailsFragmentViewModel
 
 
@@ -77,6 +78,10 @@ class DetailsFragment : Fragment() {
 
         binding.detailsFabDownloadWp.setOnClickListener {
             performAsyncLoadOfPoster()
+        }
+
+        binding.detailsFabWatchLater.setOnClickListener {
+            NotificationHelper.createNotification(requireContext(), film)
         }
     }
 
