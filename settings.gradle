@@ -8,3 +8,4 @@ dependencyResolutionManagement {
 }
 rootProject.name = "FirstApp"
 include ':app'
+include ':remote_module'

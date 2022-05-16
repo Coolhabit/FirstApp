@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    //main
+    <dimen name="fragment_placeholder_height">0dp</dimen>
+    //home
+    <dimen name="sv_margin">8dp</dimen>
+    <dimen name="rv_margin">8dp</dimen>
+    <dimen name="recycler_view_dimen">0dp</dimen>
+    //details
+    <dimen name="abl_height">200dp</dimen>
+    <dimen name="ctl_minHeight">60dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">8dp</dimen>
+    <dimen name="fab_borderWidth">0dp</dimen>
+    //film
+    <dimen name="frameHeight">150dp</dimen>
+    <dimen name="donut_dimen">50dp</dimen>
+    <dimen name="donut_transl">11dp</dimen>
+    <dimen name="card_margin">10dp</dimen>
+    <dimen name="card_cornerRad">10dp</dimen>
+    <dimen name="card_elev">1dp</dimen>
+    <dimen name="text_dimen">0dp</dimen>
+    <dimen name="text_padd">8dp</dimen>
+</resources>
