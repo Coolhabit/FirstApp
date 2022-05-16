@@ -1,4 +1,4 @@
-package ru.coolhabit.firstapp.utils
+package ru.coolhabit.firstapp.receivers
 
 import android.content.BroadcastReceiver
 import android.content.Context
