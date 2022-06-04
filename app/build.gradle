@@ -36,6 +36,16 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+    flavorDimensions 'paid'
+    productFlavors {
+        free {
+            dimension 'paid'
+        }
+        premium {
+            dimension 'paid'
+        }
+    }
 }
 
 dependencies {
