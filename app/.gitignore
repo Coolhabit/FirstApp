@@ -7,3 +7,4 @@
 /.idea/assetWizardSettings.xml
 /src/main/java/ru/coolhabit/firstapp/data/API.kt
 *.iml
+/google-services.json

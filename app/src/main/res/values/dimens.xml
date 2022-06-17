@@ -21,4 +21,5 @@
     <dimen name="card_elev">1dp</dimen>
     <dimen name="text_dimen">0dp</dimen>
     <dimen name="text_padd">8dp</dimen>
+
 </resources>

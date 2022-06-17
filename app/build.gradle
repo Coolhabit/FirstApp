@@ -3,6 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'kotlin-parcelize'
     id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
 }
 apply from: "$project.rootDir/versions.gradle"
 
@@ -36,6 +37,16 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+    flavorDimensions 'paid'
+    productFlavors {
+        free {
+            dimension 'paid'
+        }
+        premium {
+            dimension 'paid'
+        }
+    }
 }
 
 dependencies {
@@ -43,6 +54,7 @@ dependencies {
 //Glide
     implementation 'com.github.bumptech.glide:glide:4.11.0'
     implementation project(path: ':remote_module')
+    implementation 'com.google.firebase:firebase-config-ktx:21.1.0'
     kapt 'com.github.bumptech.glide:compiler:4.11.0'
 
     implementation 'androidx.core:core-ktx:1.6.0'
